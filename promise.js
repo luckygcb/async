@@ -61,3 +61,23 @@
 // }).catch(function(reason){
 //   console.log(reason)
 // });
+
+// error
+let p = new Promise((resolve, reject) => {
+  foo();
+  resolve(42)
+})
+// p.then(() => {
+//   foo();
+// }, () => {
+//   console.log('err')
+// })
+p.then((value) => console.log(value))
+
+// Promise.resolve({
+//   then: function(resolve, reject) {
+//     resolve(41)
+//   }
+// }).then((value) => {
+//   console.log(value)
+// })
