@@ -1,20 +1,20 @@
 // demo 1
-// const p = new Promise((resolve, reject) => {
-//   // reject('error')
-//   setTimeout(() => {
-//     resolve(1)
-//   }, 0)
-// })
-// p.then((value) => {
-//   console.log(value);
-// }, (e) => {
-//   console.log(e);
-// })
-// p.then((value) => {
-//   console.log(value);
-// }, (e) => {
-//   console.log(e);
-// })
+const p = new Promise((resolve, reject) => {
+  // reject('error')
+  setTimeout(() => {
+    resolve(1)
+  }, 0)
+})
+p.then((value) => {
+  console.log(value);
+}, (e) => {
+  console.log(e);
+})
+p.then((value) => {
+  console.log(value);
+}, (e) => {
+  console.log(e);
+})
 
 // demo2
 // 'use strict'
@@ -63,16 +63,16 @@
 // });
 
 // error
-let p = new Promise((resolve, reject) => {
-  foo();
-  resolve(42)
-})
+// let p = new Promise((resolve, reject) => {
+//   foo();
+//   resolve(42)
+// })
 // p.then(() => {
 //   foo();
 // }, () => {
 //   console.log('err')
 // })
-p.then((value) => console.log(value))
+// p.then((value) => console.log(value))
 
 // Promise.resolve({
 //   then: function(resolve, reject) {
