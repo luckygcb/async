@@ -1,23 +1,21 @@
 // demo 1
 const p = new Promise((resolve, reject) => {
-  // reject('error')
-  setTimeout(() => {
-    resolve(1)
-  }, 0)
+  console.log('promise')
+  resolve(1)
+})
+p.then(undefined, () => {
+
+}).then((value) => {
+  console.log('promise 1', value)
 })
 p.then((value) => {
-  console.log(value);
-}, (e) => {
-  console.log(e);
-})
-p.then((value) => {
-  console.log(value);
+  console.log('promise 2', value);
 }, (e) => {
   console.log(e);
 })
 
 // demo2
-// 'use strict'
+
 // const p = new Promise((resolve, reject) => {
 //   resolve(1)
 // })
@@ -32,23 +30,19 @@ p.then((value) => {
 //   resolve(1)
 // })
 // const p1 = new Promise((resolve, reject) => {
-//   resolve(1)
+//   resolve('p1')
 // })
-// p.then(() => {
-//   return {
-//     error: 'error',
-//     then: function(resolveP, rejectP) {
-//       rejectP(this.error);
-//     }
-//   }
+// p.then((val) => {
+//   console.log('promise 1', val);
+//   return p1
 // }).then((value) => {
-//   console.log(value)
+//   console.log('resolve', value)
 // }, (e) => {
-//   console.log(e)
+//   console.log('error', e)
 // })
 
 // promise.all promise.race
-// const promises = [2, 3, 5, 7, 11, 13];
+//const promises = [ Promise.reject(2), 3, 5, 7, Promise.reject(11), 13];
 
 // Promise.all(promises).then(function (posts) {
 //   console.log(posts);
@@ -57,9 +51,9 @@ p.then((value) => {
 // });
 
 // Promise.race(promises).then(function (posts) {
-//   console.log(posts);
+//   console.log('success', posts);
 // }).catch(function(reason){
-//   console.log(reason)
+//   console.log('error', reason)
 // });
 
 // error
@@ -69,7 +63,7 @@ p.then((value) => {
 // })
 // p.then(() => {
 //   foo();
-// }, () => {
+// }, (err) => {
 //   console.log('err')
 // })
 // p.then((value) => console.log(value))

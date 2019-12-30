@@ -1,10 +1,19 @@
 // 返回值和错误处理
 async function f() {
-  await new Promise(function (resolve, reject) {
-    throw new Error('出错了');
-  });
+  try {
+    const a = new Promise(function (resolve, reject) {
+      setTimeout(() => {
+        reject(123)
+      }, 2000)
+      
+    }).then(() => {})
+  } catch (e) {
+    console.log('err')
+  }
+  
+  // console.log(a);
 }
 
 f()
-.then(v => console.log(v))
-.catch(e => console.log(e))
+// .then(v => console.log(v))
+// .catch(e => console.log(e))
